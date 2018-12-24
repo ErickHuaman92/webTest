@@ -1,7 +1,3 @@
-<?php
-    include_once 'includes/dbh.inc.php';
-?>
-
 <<!DOCTYPE html>
 <html>
 <head>
@@ -13,18 +9,27 @@
     <script src="main.js"></script>
 </head>
 <body>
+<form action="includes/regp.inc.php" method="POST">
+    <input type="text" name="nombre" placeholder="Nombre">
+    <br>
+    <input type="text" name="descripcion" placeholder="Descripcion">
+    <br>
+    <input type="text" name="tipoProducto" placeholder="Tipo de Producto">
+    <br>
+    <input type="text" name="marca" placeholder="Marca">
+    <br>
+    <input type="text" name="precio" placeholder="Precio S/.">
+    <br>
+    <input type="text" name="packing" placeholder="Packing">
+    <br>
+    <input type="text" name="presentacion" placeholder="Presentacion">
+    <br>
+    <button type="submit" name="submit">Registrar Producto</button>
+<!--nombre, descripcion, tipoProducto, marca, precio, packing, presentacion, fechaReg)-->
+</form>
 
- <?php
-    $sql = "select * from Producto;";
-    $result = mysqli_query($conn, $sql);
-    $resultCheck = mysqli_num_rows($result);
-    
-    if ($resultCheck > 0){
-        while ($row = mysqli_fetch_assoc($result)){
-            echo $row['nombre'] . "<br>";
-        }
-    }
- ?>
+Lista de productos - Cintas de embalaje
+
 
 </body>
 </html>>
